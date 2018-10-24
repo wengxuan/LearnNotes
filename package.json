@@ -1,0 +1,21 @@
+{
+  "name": "learnnotes",
+  "version": "1.0.0",
+  "description": "my notes",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wengxuan/LearnNotes.git"
+  },
+  "author": "Mortred",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wengxuan/LearnNotes/issues"
+  },
+  "homepage": "https://github.com/wengxuan/LearnNotes#readme",
+  "dependencies": {
+    "gitbook": "^2.6.9"
+  }
+}
