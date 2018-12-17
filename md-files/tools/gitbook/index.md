@@ -1,4 +1,4 @@
-### 使用GitBook生成文档
+### 使用GitBook制作文档
 
 1. 全局安装gitbook-cli； `npm install gitbook-cli -g`
 2. 在某个目录向执行`gitbook init`，会生成`README.md`和`SUMMARY.md`两个文件，其中`SUMMARY.md`是目录结构文件；

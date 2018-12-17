@@ -4,6 +4,7 @@
   "description": "my notes",
   "scripts": {
     "gitbook:build": "gitbook build ./md-files ./docs",
+    "gitbook:serve": "gitbook serve ./md-files ./serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,7 @@
     "url": "https://github.com/wengxuan/LearnNotes/issues"
   },
   "homepage": "https://github.com/wengxuan/LearnNotes#readme",
-  "dependencies": {}
+  "dependencies": {
+    "gitbook": "^2.6.9"
+  }
 }
