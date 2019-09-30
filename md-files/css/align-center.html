@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Align Center</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      color: white;
+    }
+    .example {
+      height: 100px;
+    }
+    .block {
+      border: 2px solid salmon;
+      box-sizing: border-box;
+      background: #444444;
+      width: 100px;
+      height: 100px;
+    }
+    .empty-pa::after {
+      display: inline-block;
+      vertical-align: middle;
+      content: '';
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class='main'>
+    <!-- 水平居中 -->
+    <!-- 行内元素给父元素设置样式：text-align: center; -->
+    <div class='example block' style="text-align: center;">
+      <span>1</span>
+    </div>
+    <!-- margin: 0 auto; -->
+    <div class='example block' style="margin: 0 auto;">2</div>
+    <!-- margin: 0 auto;width:fit-content; 有浏览器支持限制 -->
+    <div class='example' style='margin: 0 auto;width:fit-content;'>
+      <div class='block' style="float: left;">3</div>
+    </div>
+    <!-- flex -->
+    <div class='example' style="display: flex;justify-content: center;">
+      <div class='block'>4</div>
+    </div>
+    <!-- 盒模型 必须加前缀 -->
+    <div class='example' style="display: -webkit-box;-webkit-box-orient: horizontal;-webkit-box-pack:center;">
+      <div class='block'>5</div>
+    </div>
+    <!-- transform -->
+    <div class='example'>
+      <div class='block' style='position:absolute; left: 50%; transform: translateX(-50%);'>6</div>
+    </div>
+    <!-- position:absolute; left: 50%; margin-left:-0.5*自身宽度; 前提知道自身宽度 -->
+    <div class='example'>
+      <div class='block' style='position:absolute; left: 50%; margin-left:-50px;'>7</div>
+    </div>
+    <!-- position:absolute;margin: 0 auto;left: 0;right: 0; -->
+    <div class='example'>
+      <div class='block' style='position:absolute;margin: 0 auto;left: 0;right: 0;'>8</div>
+    </div>
+    <!-- 垂直居中 -->
+    <div style='display: flex;'>
+      <!-- line-height -->
+      <div class='example block'>
+        <span style='line-height: 100px;'>1</span>
+      </div>
+      <!-- vertical-align: middle; 行内块级元素（比较流行） -->
+      <div class='example block empty-pa'>
+        <div style='vertical-align: middle;display:inline-block'>2</div>
+      </div>
+
+      <!-- vertical-align只有在父层为 td 或者 th 时, 才会生效, 对于其他块级元素, 例如 div、p 等, 默认情况是不支持的.
+        为了使用vertical-align, 我们需要设置父元素display:table, 子元素 display:table-cell;vertical-align:middle;-->
+
+      <!-- flex IE8/IE9不支持 需加浏览器前缀-->
+      <div class='example block' style="display:flex;align-items:center;">
+        <div>3</div>
+      </div>
+      <!-- 盒模型 兼容性差 必须加前缀 -->
+      <div class='example block' style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-box-pack:center;">
+        <div>4</div>
+      </div>
+      <!-- transform 需加浏览器前缀 -->
+      <div class='example block' style='position: relative;'>
+        <div style='position:absolute;top:50%;transform:translateY(-50%);'>5</div>
+      </div>
+      <!-- position:absolute;top:50%;margin-top:-0.5*自身高度; 高度（height）固定 & 前提知道自身高度 -->
+      <div class='example block' style='position: relative;'>
+        <div style='position:absolute;top:50%;margin-top:-10px;'>6</div>
+      </div>
+      <!-- position:absolute;top:0;bottom:0;margin:auto 0;height:固定; -->
+      <div class='example block' style='position: relative;'>
+        <div style='position:absolute;top:0;bottom:0;margin:auto 0;height:21px;'>7</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
